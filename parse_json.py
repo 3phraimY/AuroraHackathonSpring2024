@@ -1,12 +1,8 @@
 import json
+from pyoembed import oEmbed
 
-# some JSON:
-data = oEmbed('https://youtu.be/dQw4w9WgXcQ', maxwidth=640, maxheight=480)
+# convert video data to dictionary
+data = oEmbed('https://youtu.be/dQw4w9WgXcQ')
 print(data)
-x =  '{ "name":"John", "age":30, "city":"New York"}'
-
-# parse x:
-y = json.loads(x)
-
-# the result is a Python dictionary:
-print(y["age"])
+# can replace words in "" with any match in the dictionary
+print(data["author_name"])
